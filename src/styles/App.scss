@@ -1,6 +1,7 @@
 @use 'core/reset';
 @use 'core/vars.scss';
 @use './layout';
+@use './buttons';
 
 body {
     font-family: vars.$font-secondary;

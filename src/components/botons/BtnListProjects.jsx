@@ -1,8 +1,9 @@
 function BtnListProjects() {
   return (
-    <>
-      <p>BtnListProjects</p>
-    </>
+
+    <div className="btnContainer">
+      <button className="btnNewProject">VER PROYECTOS</button>
+    </div>
   );
 }
 export default BtnListProjects;
