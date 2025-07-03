@@ -2,6 +2,8 @@
 @use 'core/vars.scss';
 @use './layout';
 @use './components/CardPreview.scss';
+@use './buttons';
+
 
 body {
     font-family: vars.$font-secondary;

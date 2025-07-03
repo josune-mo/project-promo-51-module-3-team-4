@@ -1,8 +1,8 @@
 function BtnNewProject() {
   return (
-    <>
-      <p>BtnNewProject</p>
-    </>
+    <div className="btnContainer">
+      <button className="btnNewProject">NUEVO PROYECTO</button>
+    </div>
   );
 }
 export default BtnNewProject;
