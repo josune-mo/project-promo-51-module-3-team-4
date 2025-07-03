@@ -1,6 +1,7 @@
 @use 'core/reset';
 @use 'core/vars.scss';
 @use './layout';
+@use './components/CardPreview.scss';
 
 body {
     font-family: vars.$font-secondary;
