@@ -1,8 +1,9 @@
 function Header() {
   return (
-    <>
-      <h1>Header</h1>
-    </>
+    <div className="header">
+      <h1 className="header__h1">Proyectos Molones</h1>
+      <p className="header__p">Un escaparate web para curiosear, pescar y almacenar ideas con sabor tecnológico.</p>
+    </div>
   );
 }
 export default Header;

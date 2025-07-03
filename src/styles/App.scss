@@ -1,2 +1,13 @@
 @use 'core/reset';
+@use 'core/vars.scss';
+@use './layout';
 
+body {
+    font-family: vars.$font-secondary;
+    color: white;
+}
+
+html, body {
+    background: #1212b5;
+    background: radial-gradient(circle,rgba(18, 18, 181, 1) 33%, rgba(81, 165, 184, 1) 99%);
+}

@@ -1,0 +1,63 @@
+@use './core/vars';
+
+//NAV LOGOS
+.logos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 5px;
+    padding-inline: 2%;
+
+    &__p {
+        display: flex;
+        align-items: center;
+        font-weight: 100;
+        color: vars.$color-accent;
+        gap: 5px;
+    }
+
+    &__img {
+        width: 60px;
+    }
+}
+
+//HEADER
+.header {
+    padding-top: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    &__h1 {
+        font-family: vars.$font-primary;
+        font-size: 30px;
+    }
+  
+    &__p {
+        font-family: vars.$font-secondary;
+        font-size: 15px;
+        width: 80%;
+        padding-top: 15px;
+        color: vars.$color-accent;
+    }
+  }
+
+//FOOTER
+.footer {
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    font-size: 0.8rem;
+    font-weight: 300;
+
+    &__p {
+        color: vars.$color-accent;
+        padding: 10px 0;
+        text-align: center;
+    }
+  }
