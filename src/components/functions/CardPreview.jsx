@@ -1,6 +1,8 @@
 import defaultAvatar from '../../images/default-avatar.svg'
 
-function CardPreview({avatar = defaultAvatar}) {
+
+function CardPreview() {
+  const avatar = defaultAvatar;
   return (
     <article className="card-preview">
       <section className='card-preview__profile'>
