@@ -83,7 +83,7 @@ function Form() {
             required
           />
         </div>
-        <form action="/subir" method="post" enctype="multipart/form-data">
+        <form action="/subir" method="post" encType="multipart/form-data">
           <input type="file" id="foto1" name="foto1" accept="image/*" />
 
           <input type="file" id="foto2" name="foto2" accept="image/*" />
