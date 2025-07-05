@@ -1,6 +1,5 @@
 import BtnNewProject from "../botons/BtnNewProject";
 import TeamCard from "../TeamCard/TeamCard";
-import "../../styles/components/TeamCard.scss";
 
 function Landing() {
   const team = [
@@ -111,7 +110,7 @@ function Landing() {
       <BtnNewProject />
 
       <section className="team-section">
-        <div className="team-flex">
+        <div className="cards-flex">
           {team.map((member, index) => (
             <TeamCard key={index} {...member} />
           ))}
