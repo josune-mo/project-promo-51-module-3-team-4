@@ -51,10 +51,12 @@
     font-size: 13px;
     color: #777;
     margin-bottom: 5px;
+    font-family: vars.$font-primary;
   }
 
   &__name {
     font-size: 20px;
+    font-family: vars.$font-primary;
   }
 
   &__content {
@@ -91,7 +93,8 @@
   }
 
   &__title {
-    font-size: 17px;
+    font-size: 20px;
+    font-family: vars.$font-primary;
   }
 
   &__description {
@@ -103,6 +106,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    font-family: vars.$font-primary;
   }
 
   &__tech-tag {
