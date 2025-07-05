@@ -11,7 +11,6 @@ function TeamCard({
 }) {
   return (
     <>
-    <div className="cardList">
       <div className="team-card">
         <div className="card-header">
           {/* ES EL CORRECTO, BORRAR EL DE ABAJO, SOLO LO NECESITABA PARA EL FORMATO FOTO<img src={photo} alt={`Foto de ${name}`} className="profile-pic" /> */}
@@ -23,7 +22,7 @@ function TeamCard({
         </div>
 
         <div className="card-content">
-          <p className="personalProjectCard">Personal Project Card</p>
+          <p className="personalProjectCard"> Personal Project Card </p>
           <h3>{projectTitle}</h3>
           {/*  ES EL CORRECTO, BORRAR EL DE ABAJO, SOLO LO NECESITABA PARA EL FORMATO <p className="description">{description}</p> */}
           <p className="description">{"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."}</p>
@@ -50,7 +49,6 @@ function TeamCard({
           </div>
         </div>
       </div>
-    </div>
     </>
   );
 }
