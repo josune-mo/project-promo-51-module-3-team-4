@@ -10,14 +10,35 @@ import CardPreviewPage from "./components/pages/CardPreviewPage";
 import "./styles/App.scss";
 
 function App() {
+  const [profileAvatar, setProfileAvatar] = useState("");
+  const [projectAvatar, setProjectAvatar] = useState("");
+
   return (
     <>
       <Nav />
       <Header />
       <Routes>
-        <Route index element={<Landing/>}/>
-        <Route path="/newproject" element={<FormPage/>}/>
-        <Route path="/cardpreview" element={<CardPreviewPage/>}/>
+        <Route index element={<Landing />} />
+        <Route
+          path="/newproject"
+          element={
+            <FormPage
+              profileAvatar={profileAvatar}
+              setProfileAvatar={setProfileAvatar}
+              projectAvatar={projectAvatar}
+              setProjectAvatar={setProjectAvatar}
+            />
+          }
+        />
+        <Route
+          path="/cardpreview"
+          element={
+            <CardPreviewPage
+              profileAvatar={profileAvatar}
+              projectAvatar={projectAvatar}
+            />
+          }
+        />
       </Routes>
       <Footer />
     </>

@@ -1,5 +1,6 @@
+import React, { useRef, useState } from "react";
 import PropTypes from 'prop-types';
-import defaultAvatar from '../images/default-avatar.svg';
+import defaultAvatar from '../../images/default-avatar.svg';
 
 function GetAvatar({avatar=defaultAvatar, updateAvatar, text='Get avatar!'}) {
   const fr = new FileReader();

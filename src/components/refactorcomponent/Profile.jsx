@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import defaultAvatar from '../images/default-avatar.svg';
+import defaultAvatar from '../../images/default-avatar.svg';
 
 function Profile(props) {
   const avatar = props.avatar === '' ? defaultAvatar : props.avatar;

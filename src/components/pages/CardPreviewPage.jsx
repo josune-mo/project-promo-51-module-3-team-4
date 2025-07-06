@@ -1,9 +1,11 @@
 import CardPreview from "../functions/CardPreview";
-function CardPreviewPage() {
+function CardPreviewPage({ profileAvatar, projectAvatar }) {
   return (
     <>
-      <p>CardPreviewPage</p>
-      <CardPreview/>
+      <CardPreview
+        profileAvatar={profileAvatar}
+        projectAvatar={projectAvatar}
+      />
     </>
   );
 }

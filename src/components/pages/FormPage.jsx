@@ -2,14 +2,25 @@ import BtnListProjects from "../botons/BtnListProjects";
 import Form from "../functions/Form";
 import CardPreview from "../functions/CardPreview";
 
-function FormPage() {
+function FormPage({
+  profileAvatar,
+  setProfileAvatar,
+  projectAvatar,
+  setProjectAvatar,
+}) {
   return (
     <>
-      <p>FormPage</p>
       <BtnListProjects />
-      <CardPreview />
-      <Form />
-
+      <CardPreview
+        profileAvatar={profileAvatar}
+        projectAvatar={projectAvatar}
+      />
+      <Form
+        profileAvatar={profileAvatar}
+        setProfileAvatar={setProfileAvatar}
+        projectAvatar={projectAvatar}
+        setProjectAvatar={setProjectAvatar}
+      />
     </>
   );
 }

@@ -1,4 +1,11 @@
-function Form() {
+import GetAvatar from "../refactorcomponent/GetAvatar";
+
+function Form({
+  profileAvatar,
+  setProfileAvatar,
+  projectAvatar,
+  setProjectAvatar,
+}) {
   return (
     <>
       <div>
@@ -42,8 +49,8 @@ function Form() {
           />
         </div>
         <div>
-          <select name="tecnologia" id="tecnologia">
-            <option value="" selected disabled>
+          <select name="tecnologia" id="tecnologia" defaultValue="">
+            <option value="" disabled>
               Tecnología
             </option>
             <option value="javascript">JavaScript</option>
@@ -71,25 +78,33 @@ function Form() {
           <input
             type="text"
             placeholder="Nombre"
-            id="projectName"
-            name="projectName"
+            id="authorName"
+            name="authorName"
             required
           />
           <input
             type="text"
             placeholder="Trabajo"
-            id="projectJob"
-            name="projectJob"
+            id="authorJob"
+            name="authorJob"
             required
           />
+          {/* Foto de perfil */}
+          <GetAvatar
+            avatar={profileAvatar}
+            updateAvatar={setProfileAvatar}
+            text="Sube tu foto de perfil"
+          />
         </div>
-        <form action="/subir" method="post" encType="multipart/form-data">
-          <input type="file" id="foto1" name="foto1" accept="image/*" />
-
-          <input type="file" id="foto2" name="foto2" accept="image/*" />
-
-          <button>Subir proyecto</button>
-        </form>
+        {/* Foto del proyecto */}
+        <div>
+          <GetAvatar
+            avatar={projectAvatar}
+            updateAvatar={setProjectAvatar}
+            text="Sube la imagen de tu proyecto"
+          />
+        </div>
+        <button>Subir proyecto</button>
       </form>
     </>
   );
