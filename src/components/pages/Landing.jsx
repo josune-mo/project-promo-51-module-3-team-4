@@ -73,7 +73,7 @@ function Landing() {
       links: [
         {
           name: "GitHub",
-          url: "https://github.com/joana",
+          url: "https://github.com/Sandra",
           icon: "/assets/icons/github.svg",
         },
         {
@@ -93,7 +93,7 @@ function Landing() {
       links: [
         {
           name: "GitHub",
-          url: "https://github.com/joana",
+          url: "https://github.com/Joana2617",
           icon: "/assets/icons/github.svg",
         },
         {
