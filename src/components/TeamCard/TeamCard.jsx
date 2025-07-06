@@ -1,4 +1,4 @@
-
+import PropTypes from "prop-types";
 
 function TeamCard({
   name,
@@ -10,12 +10,15 @@ function TeamCard({
   links,
 }) {
   return (
-
-     <>
+    <>
       <article className="cardStyle">
         <section className="cardStyle__header">
-           {/* ESTE ES EL CORRECTO, BORRAR EL DE ABAJO, SOLO LO NECESITABA PARA EL FORMATO FOTO --> <img src={photo} alt={`Foto de ${name}`} className="profile-pic" /> */}
-          <img src={"https://placehold.co/400"} alt={`Foto de ${name}`} className="cardStyle__profile-pic" />
+          <img
+            src={photo}
+            alt={`Foto de ${name}`}
+            className="cardStyle__profile-pic"
+          />
+
           <div className="cardStyle__body">
             <p className="cardStyle__role">{role}</p>
             <h2 className="cardStyle__name">{name}</h2>
@@ -26,8 +29,8 @@ function TeamCard({
           <p className="cardStyle__personal-project">Personal Project Card</p>
           <h3 className="cardStyle__title">{projectTitle}</h3>
           <h4 className="cardStyle__subtitle">Diseños Exclusivos</h4>
-          {/*  ESTE ES EL CORRECTO, BORRAR EL DE ABAJO, SOLO LO NECESITABA PARA EL FORMATO --> <p className="description">{description}</p> */}
-          <p className="cardStyle__description">{"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."}</p>
+
+          <p className="cardStyle__description">{description}</p>
 
           <div className="cardStyle__tech-list">
             {technologies.map((tech, i) => (
@@ -52,8 +55,23 @@ function TeamCard({
         </section>
       </article>
     </>
-
   );
 }
+
+TeamCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  role: PropTypes.string.isRequired,
+  projectTitle: PropTypes.string.isRequired,
+  description: PropTypes.string,
+  technologies: PropTypes.arrayOf(PropTypes.string).isRequired,
+  photo: PropTypes.string.isRequired,
+  links: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired,
+      icon: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};
 
 export default TeamCard;
