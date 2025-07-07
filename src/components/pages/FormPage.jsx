@@ -1,9 +1,10 @@
 import BtnListProjects from "../botons/BtnListProjects";
 import Form from "../functions/Form";
 import CardPreview from "../functions/CardPreview";
+import PropTypes from 'prop-types';
 
 function FormPage({ formData, setFormData }) {
-  const { profileAvatar, projectAvatar } = formData;
+  
   return (
     <>
       <BtnListProjects />
@@ -23,4 +24,8 @@ function FormPage({ formData, setFormData }) {
     </>
   );
 }
+FormPage.propTypes = {
+  formData: PropTypes.object.isRequired,
+  setFormData: PropTypes.func.isRequired,
+};
 export default FormPage;

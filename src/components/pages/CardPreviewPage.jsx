@@ -1,12 +1,15 @@
 import CardPreview from "../functions/CardPreview";
-function CardPreviewPage({ profileAvatar, projectAvatar }) {
+import PropTypes from 'prop-types';
+
+function CardPreviewPage({projectData}) {
   return (
     <>
-      <CardPreview
-        profileAvatar={profileAvatar}
-        projectAvatar={projectAvatar}
-      />
+      <CardPreview formData={projectData} />
+
     </>
   );
 }
+CardPreviewPage.propTypes = {
+  projectData: PropTypes.object.isRequired,
+};
 export default CardPreviewPage;

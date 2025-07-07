@@ -1,4 +1,6 @@
 import GetAvatar from "../refactorcomponent/GetAvatar";
+import PropTypes from 'prop-types';
+
 
 function Form({ formData, setFormData }) {
   const handleInput = (ev) => {
@@ -67,9 +69,8 @@ function Form({ formData, setFormData }) {
           <div className="form__group">
             <select
               className="form__select"
-              name="tecnologia"
-              id="tecnologia"
-              defaultValue=""
+              name="technology"
+              id="technology"
               value={formData.technology}
               onChange={handleInput}
             >
@@ -136,9 +137,9 @@ function Form({ formData, setFormData }) {
             {/* Foto del proyecto */}
             <div className="form__group">
               <GetAvatar
-                avatar={formData.profileAvatar}
+                avatar={formData.projectAvatar}
                 updateAvatar={(img) =>
-                  setFormData({ ...formData, profileAvatar: img })
+                  setFormData({ ...formData, projectAvatar: img })
                 }
                 text="Sube la imagen de tu proyecto"
               />
@@ -150,4 +151,21 @@ function Form({ formData, setFormData }) {
     </>
   );
 }
+Form.propTypes = {
+  formData: PropTypes.shape({
+    projectName: PropTypes.string,
+    projectSlogan: PropTypes.string,
+    projectRepository: PropTypes.string,
+    projectDemo: PropTypes.string,
+    technology: PropTypes.string,
+    description: PropTypes.string,
+    authorName: PropTypes.string,
+    authorJob: PropTypes.string,
+    profileAvatar: PropTypes.string,
+    projectAvatar: PropTypes.string,
+  }).isRequired,
+  setFormData: PropTypes.func.isRequired,
+};
+
+
 export default Form;
