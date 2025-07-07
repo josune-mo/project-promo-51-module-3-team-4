@@ -95,6 +95,7 @@ function Form({ formData, setFormData }) {
               className="form__textarea"
               value={formData.description}
               onChange={handleInput}
+              rows="5"
             ></textarea>
           </div>
 
