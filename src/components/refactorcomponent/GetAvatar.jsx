@@ -21,7 +21,7 @@ function GetAvatar({avatar=defaultAvatar, updateAvatar, text='Get avatar!'}) {
 
   return (
     <div className="get-avatar">
-      <label className="get-avatar__label get-avatar__button">
+      <label className="get-avatar__label genericBtn">
         {text}
         <input
           type="file"

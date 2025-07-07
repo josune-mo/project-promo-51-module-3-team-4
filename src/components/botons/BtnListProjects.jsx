@@ -5,7 +5,7 @@ function BtnListProjects() {
 
     <div className="btnContainer">
       <Link to="/">
-      <button className="btnNewProject">VER PROYECTOS</button>
+      <button className="genericBtn">VER PROYECTOS</button>
       </Link>
     </div>
   );

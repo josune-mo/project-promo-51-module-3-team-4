@@ -1,9 +1,9 @@
 @use "core/reset";
 @use "core/vars.scss";
 @use "./layout";
-// @use "./components/CardPreview.scss";
 @use "./buttons";
-@use "./components/CardStyle.scss";
+@use "./components/cardStyle.scss";
+@use "./components/form";
 
 body {
   font-family: vars.$font-secondary;

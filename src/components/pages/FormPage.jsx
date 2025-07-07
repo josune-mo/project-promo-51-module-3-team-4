@@ -11,16 +11,21 @@ function FormPage({
   return (
     <>
       <BtnListProjects />
-      <CardPreview
-        profileAvatar={profileAvatar}
-        projectAvatar={projectAvatar}
-      />
-      <Form
-        profileAvatar={profileAvatar}
-        setProfileAvatar={setProfileAvatar}
-        projectAvatar={projectAvatar}
-        setProjectAvatar={setProjectAvatar}
-      />
+
+      <section className="formPageStyle">
+        <CardPreview
+          profileAvatar={profileAvatar}
+          projectAvatar={projectAvatar}
+          className="leftContent"
+        />
+        <Form
+          profileAvatar={profileAvatar}
+          setProfileAvatar={setProfileAvatar}
+          projectAvatar={projectAvatar}
+          setProjectAvatar={setProjectAvatar}
+          className="rightContent"
+        />
+      </section>
     </>
   );
 }

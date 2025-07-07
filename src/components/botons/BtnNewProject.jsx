@@ -5,7 +5,7 @@ function BtnNewProject() {
   return (
     <div className="btnContainer">
       <Link to="/newproject">
-      <button className="btnNewProject">NUEVO PROYECTO</button>
+      <button className="genericBtn">NUEVO PROYECTO</button>
       </Link>
     </div>
   );

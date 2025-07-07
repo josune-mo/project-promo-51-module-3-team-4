@@ -7,7 +7,7 @@ function Landing() {
       name: "Josune",
       role: "Full Stack Developer",
       projectTitle: "Elegant Workspace",
-      description: "Detail.",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tellus est, tempus in suscipit vel, ullamcorper sit amet risus.",
       technologies: ["React", "HTML", "CSS"],
       photo: "/Josune.jpg",
       links: [
@@ -27,7 +27,7 @@ function Landing() {
       name: "Chiara",
       role: "Full Stack Developer",
       projectTitle: "Elegant Workspace",
-      description: "Detail.",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tellus est, tempus in suscipit vel, ullamcorper sit amet risus. ",
       technologies: ["React", "HTML", "CSS"],
       photo: "/Chiara.jpg",
       links: [
@@ -47,7 +47,7 @@ function Landing() {
       name: "Montse",
       role: "Full Stack Developer",
       projectTitle: "Elegant Workspace",
-      description: "Detail.",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tellus est, tempus in suscipit vel, ullamcorper sit amet risus.",
       technologies: ["React", "HTML", "CSS"],
       photo: "/assets/fotos/joana.jpg",
       links: [
@@ -67,7 +67,7 @@ function Landing() {
       name: "Sandra",
       role: "Full Stack Developer",
       projectTitle: "Elegant Workspace",
-      description: "Detail.",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tellus est, tempus in suscipit vel, ullamcorper sit amet risus.",
       technologies: ["React", "HTML", "CSS"],
       photo: "/Sandra.jpg",
       links: [
@@ -87,7 +87,7 @@ function Landing() {
       name: "Joana",
       role: "Full Stack Developer",
       projectTitle: "Elegant Workspace",
-      description: "Detail.",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tellus est, tempus in suscipit vel, ullamcorper sit amet risus.",
       technologies: ["React", "HTML", "CSS"],
       photo: "/Joana.jpg",
       links: [
