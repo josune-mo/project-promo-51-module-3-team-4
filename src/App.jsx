@@ -12,6 +12,18 @@ import "./styles/App.scss";
 function App() {
   const [profileAvatar, setProfileAvatar] = useState("");
   const [projectAvatar, setProjectAvatar] = useState("");
+  const [formData, setFormData] = useState({
+    projectName: "",
+    projectSlogan: "",
+    projectRepository: "",
+    projectDemo: "",
+    technology: "",
+    description: "",
+    authorName: "",
+    authorJob: "",
+    profileAvatar: "",
+    projectAvatar: "",
+  });
 
   return (
     <>
@@ -27,6 +39,8 @@ function App() {
               setProfileAvatar={setProfileAvatar}
               projectAvatar={projectAvatar}
               setProjectAvatar={setProjectAvatar}
+              formData={formData}
+              setFormData={setFormData}
             />
           }
         />

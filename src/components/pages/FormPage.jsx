@@ -2,27 +2,21 @@ import BtnListProjects from "../botons/BtnListProjects";
 import Form from "../functions/Form";
 import CardPreview from "../functions/CardPreview";
 
-function FormPage({
-  profileAvatar,
-  setProfileAvatar,
-  projectAvatar,
-  setProjectAvatar,
-}) {
+function FormPage({ formData, setFormData }) {
+  const { profileAvatar, projectAvatar } = formData;
   return (
     <>
       <BtnListProjects />
 
       <section className="formPageStyle">
         <CardPreview
-          profileAvatar={profileAvatar}
-          projectAvatar={projectAvatar}
+          formData={formData}
+          setFormData={setFormData}
           className="leftContent"
         />
         <Form
-          profileAvatar={profileAvatar}
-          setProfileAvatar={setProfileAvatar}
-          projectAvatar={projectAvatar}
-          setProjectAvatar={setProjectAvatar}
+          formData={formData}
+          setFormData={setFormData}
           className="rightContent"
         />
       </section>

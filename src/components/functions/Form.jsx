@@ -1,20 +1,22 @@
 import GetAvatar from "../refactorcomponent/GetAvatar";
 
-function Form({
-  profileAvatar,
-  setProfileAvatar,
-  projectAvatar,
-  setProjectAvatar,
-}) {
+function Form({ formData, setFormData }) {
+  const handleInput = (ev) => {
+    setFormData({
+      ...formData,
+      [ev.target.name]: ev.target.value,
+    });
+  };
+
   return (
     <>
-    <div className="form__wrapper">
-      <form className="form__container">
-        <div className="form__title">
-          <h2>Información</h2>
-          <p>Cuéntanos mas sobre tu proyecto</p>
-        </div>
-        <div className="form__divider"></div>
+      <div className="form__wrapper">
+        <form className="form__container">
+          <div className="form__title">
+            <h2>Información</h2>
+            <p>Cuéntanos mas sobre tu proyecto</p>
+          </div>
+          <div className="form__divider"></div>
           <div className="form__group">
             <input
               type="text"
@@ -23,6 +25,8 @@ function Form({
               name="projectName"
               required
               className="form__input"
+              value={formData.projectName}
+              onChange={handleInput}
             />
           </div>
           <div className="form__group">
@@ -33,6 +37,8 @@ function Form({
               name="projectSlogan"
               required
               className="form__input"
+              value={formData.projectSlogan}
+              onChange={handleInput}
             />
           </div>
           <div className="form__group2">
@@ -43,6 +49,8 @@ function Form({
               name="projectRepository"
               required
               className="form__input"
+              value={formData.projectRepository}
+              onChange={handleInput}
             />
 
             <input
@@ -52,10 +60,19 @@ function Form({
               name="projectDemo"
               required
               className="form__input"
+              value={formData.projectDemo}
+              onChange={handleInput}
             />
           </div>
           <div className="form__group">
-            <select className="form__select" name="tecnologia" id="tecnologia" defaultValue="">
+            <select
+              className="form__select"
+              name="tecnologia"
+              id="tecnologia"
+              defaultValue=""
+              value={formData.technology}
+              onChange={handleInput}
+            >
               <option value="" disabled>
                 Tecnología
               </option>
@@ -76,6 +93,8 @@ function Form({
               placeholder="Descripción"
               required
               className="form__textarea"
+              value={formData.description}
+              onChange={handleInput}
             ></textarea>
           </div>
 
@@ -89,6 +108,8 @@ function Form({
               name="authorName"
               required
               className="form__input"
+              value={formData.authorName}
+              onChange={handleInput}
             />
             <input
               type="text"
@@ -97,21 +118,27 @@ function Form({
               name="authorJob"
               required
               className="form__input"
+              value={formData.authorJob}
+              onChange={handleInput}
             />
 
             <div className="form__btns">
               {/* Foto de perfil */}
               <GetAvatar
-                avatar={profileAvatar}
-                updateAvatar={setProfileAvatar}
+                avatar={formData.profileAvatar}
+                updateAvatar={(img) =>
+                  setFormData({ ...formData, profileAvatar: img })
+                }
                 text="Sube tu foto de perfil"
               />
             </div>
             {/* Foto del proyecto */}
             <div className="form__group">
               <GetAvatar
-                avatar={projectAvatar}
-                updateAvatar={setProjectAvatar}
+                avatar={formData.profileAvatar}
+                updateAvatar={(img) =>
+                  setFormData({ ...formData, profileAvatar: img })
+                }
                 text="Sube la imagen de tu proyecto"
               />
             </div>
