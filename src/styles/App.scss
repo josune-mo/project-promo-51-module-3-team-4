@@ -1,8 +1,8 @@
 @use "core/reset";
-@use "core/vars.scss";
+@use "core/vars";
 @use "./layout";
 @use "./buttons";
-@use "./components/cardStyle.scss";
+@use "./components/cardStyle";
 @use "./components/form";
 
 body {
@@ -12,6 +12,10 @@ body {
 
 html,
 body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
   background: #1212b5;
   background: radial-gradient(
     circle,
