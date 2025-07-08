@@ -71,19 +71,22 @@
         font-family: vars.$font-secondary;
         color: white;
 
-        &::placeholder {
-            color: white;
-        }
+      &::placeholder {
+        color: white;
       }
+
+ 
+  .select__option {
+    color: black;
+  }
+}
     
     &__input {
         width: 100%;
         box-sizing: border-box;
       }
 
-    &__select {
-        color: white;
-    }
+   
 
     &__author {
         font-family: vars.$font-primary;
@@ -100,3 +103,4 @@
         margin-top: 20px;
     }
 }
+

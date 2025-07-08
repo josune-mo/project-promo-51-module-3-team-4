@@ -1,6 +1,6 @@
 import GetAvatar from "../refactorcomponent/GetAvatar";
-import PropTypes from 'prop-types';
-
+import PropTypes from "prop-types";
+import Select from "react-select";
 
 function Form({ formData, setFormData }) {
   const handleInput = (ev) => {
@@ -10,10 +10,24 @@ function Form({ formData, setFormData }) {
     });
   };
 
+  const handleSubmit = (e) => {
+  e.preventDefault();
+};
+
+  const techOptions = [
+    { value: "javascript", label: "JavaScript" },
+    { value: "python", label: "Python" },
+    { value: "java", label: "Java" },
+    { value: "csharp", label: "C#" },
+    { value: "php", label: "PHP" },
+    
+    { value: "typescript", label: "TypeScript" },
+  ];
+
   return (
     <>
       <div className="form__wrapper">
-        <form className="form__container">
+        <form className="form__container"onSubmit={handleSubmit}>
           <div className="form__title">
             <h2>Información</h2>
             <p>Cuéntanos mas sobre tu proyecto</p>
@@ -46,7 +60,7 @@ function Form({ formData, setFormData }) {
           <div className="form__group2">
             <input
               type="text"
-              placeholder="Repositorio"
+              placeholder="Repo ejemplo: https: //github.com/tuusuario/tu-repo"
               id="projectRepository"
               name="projectRepository"
               required
@@ -66,27 +80,26 @@ function Form({ formData, setFormData }) {
               onChange={handleInput}
             />
           </div>
-          <div className="form__group">
-            <select
-              className="form__select"
-              name="technology"
-              id="technology"
-              value={formData.technology}
-              onChange={handleInput}
-            >
-              <option value="" disabled>
-                Tecnología
-              </option>
-              <option value="javascript">JavaScript</option>
-              <option value="python">Python</option>
-              <option value="java">Java</option>
-              <option value="csharp">C#</option>
-              <option value="php">PHP</option>
-              <option value="ruby">Ruby</option>
-              <option value="go">Go (Golang)</option>
-              <option value="typescript">TypeScript</option>
-            </select>
-          </div>
+         
+          <Select 
+            placeholder="Tecnologías"
+            options={techOptions}
+            isMulti
+            closeMenuOnSelect={false}
+            isSearchable={false}
+            name="technology"
+            className="form__select"
+            classNamePrefix="select"
+            value={formData.technology}
+            onChange={(selectedOptions) =>
+              setFormData({
+                ...formData,
+                technology: selectedOptions,
+              })
+            }
+          />
+
+          
           <div className="form__group">
             <textarea
               id="description"
@@ -157,7 +170,12 @@ Form.propTypes = {
     projectSlogan: PropTypes.string,
     projectRepository: PropTypes.string,
     projectDemo: PropTypes.string,
-    technology: PropTypes.string,
+    technology: PropTypes.arrayOf(
+      PropTypes.shape({
+        value: PropTypes.string,
+        label: PropTypes.string,
+      })
+    ),
     description: PropTypes.string,
     authorName: PropTypes.string,
     authorJob: PropTypes.string,
@@ -166,6 +184,5 @@ Form.propTypes = {
   }).isRequired,
   setFormData: PropTypes.func.isRequired,
 };
-
 
 export default Form;

@@ -16,7 +16,7 @@ function App() {
     projectSlogan: "",
     projectRepository: "",
     projectDemo: "",
-    technology: "",
+    technology: [],
     description: "",
     authorName: "",
     authorJob: "",

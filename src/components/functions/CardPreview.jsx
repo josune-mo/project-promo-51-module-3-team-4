@@ -1,6 +1,6 @@
 import Profile from "../refactorcomponent/Profile";
 import defaultAvatar from "../../images/default-avatar.svg";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 function CardPreview({ formData }) {
   const {
@@ -42,7 +42,9 @@ function CardPreview({ formData }) {
           </div>
 
           <div className="cardStyle__tech-list">
-            <p className="cardStyle__tech-tag">{technology}</p>
+            <p className="cardStyle__tech-tag">
+              {technology.map((tech) => tech.label).join(", ")}
+            </p>
             <div className="cardStyle__contact-links">
               {projectRepository && (
                 <a href={projectRepository} target="_blank" rel="noreferrer">
@@ -76,4 +78,3 @@ CardPreview.propTypes = {
   }).isRequired,
 };
 export default CardPreview;
-
