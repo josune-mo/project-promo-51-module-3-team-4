@@ -1,6 +1,7 @@
 import GetAvatar from "../refactorcomponent/GetAvatar";
 import PropTypes from "prop-types";
 import Select from "react-select";
+import { Link } from "react-router-dom";
 
 function Form({ formData, setFormData }) {
   const handleInput = (ev) => {
@@ -12,7 +13,23 @@ function Form({ formData, setFormData }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const dataAEnviar = {
+    ...formData,
+    technology: formData.technology.map((tech) => tech.value),
   };
+
+  fetch('https://dev.adalab.es/api/projectCard', {
+    method: 'POST',
+    body: JSON.stringify(dataAEnviar),
+    headers: { 'Content-Type': 'application/json' },
+  })
+    .then((response) => response.json())
+    .then((dataResponse) => {
+      // Mirar que devuelve esa petición y que podemos hacer con ella
+      console.log(dataResponse);
+    });
+};
 
   const techOptions = [
     { value: "javascript", label: "JavaScript" },
@@ -20,7 +37,6 @@ function Form({ formData, setFormData }) {
     { value: "java", label: "Java" },
     { value: "csharp", label: "C#" },
     { value: "php", label: "PHP" },
-
     { value: "typescript", label: "TypeScript" },
   ];
 
@@ -158,13 +174,16 @@ function Form({ formData, setFormData }) {
                 hidePreview={true}
               />
             </div>
-            <button className="genericBtn">Subir proyecto</button>
+            <Link to="/cardpreview">
+              <button className="genericBtn">Subir proyecto</button>
+            </Link>
           </div>
         </form>
       </div>
     </>
   );
-}
+};
+
 Form.propTypes = {
   formData: PropTypes.shape({
     projectName: PropTypes.string,
