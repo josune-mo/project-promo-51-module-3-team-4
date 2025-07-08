@@ -22,16 +22,16 @@ function CardPreview({ formData }) {
         <section className="cardStyle__header">
           <Profile avatar={profileAvatar} />
           <div className="cardStyle__body">
-            <p className="cardStyle__role">{authorJob}</p>
-            <h2 className="cardStyle__name">{authorName}</h2>
+            <p className="cardStyle__role">{authorJob || "Full Stack Developer"}</p>
+            <h2 className="cardStyle__name">{authorName || "Emmelie Björklund"}</h2>
           </div>
         </section>
 
         <section className="cardStyle__content">
           <p className="cardStyle__personal-project">Personal Project Card</p>
-          <h3 className="cardStyle__title">{projectName}</h3>
-          <h4 className="cardStyle__subtitle">{projectSlogan}</h4>
-          <p className="cardStyle__description">{description}</p>
+          <h3 className="cardStyle__title">{projectName || "Elegant Workspace"}</h3>
+          <h4 className="cardStyle__subtitle">{projectSlogan || "Diseños exclusivos"}</h4>
+          <p className="cardStyle__description">{description || "Product Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet faucibus commodo tellus lectus lobortis."}</p>
 
           <div className="cardStyle__project-img-container">
             <img
@@ -72,7 +72,7 @@ CardPreview.propTypes = {
     authorName: PropTypes.string,
     authorJob: PropTypes.string,
     description: PropTypes.string,
-    technology: PropTypes.string,
+    technology: PropTypes.arrayOf(PropTypes.string),
     projectRepository: PropTypes.string,
     projectDemo: PropTypes.string,
   }).isRequired,

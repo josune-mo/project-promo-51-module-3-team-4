@@ -10,7 +10,6 @@ import CardPreviewPage from "./components/pages/CardPreviewPage";
 import "./styles/App.scss";
 
 function App() {
-
   const [formData, setFormData] = useState({
     projectName: "",
     projectSlogan: "",
@@ -30,25 +29,15 @@ function App() {
       <Header />
       <Routes>
         <Route index element={<Landing />} />
- <Route
-  path="/newproject"
-  element={
-    <FormPage
-      formData={formData}
-      setFormData={setFormData}
-    />
-  }
-/>
+        <Route
+          path="/newproject"
+          element={<FormPage formData={formData} setFormData={setFormData} />}
+        />
 
-<Route
-  path="/cardpreview"
-  element={
-    <CardPreviewPage
-      projectData={formData}  
-    />
-  }
-/>
-
+        <Route
+          path="/cardpreview"
+          element={<CardPreviewPage projectData={formData} />}
+        />
       </Routes>
       <Footer />
     </>
