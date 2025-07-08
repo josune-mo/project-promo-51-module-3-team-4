@@ -1,4 +1,5 @@
 import GetAvatar from "../refactorcomponent/GetAvatar";
+import defaultAvatar from "../../images/default-avatar.svg";
 import PropTypes from "prop-types";
 import Select from "react-select";
 
@@ -11,8 +12,8 @@ function Form({ formData, setFormData }) {
   };
 
   const handleSubmit = (e) => {
-  e.preventDefault();
-};
+    e.preventDefault();
+  };
 
   const techOptions = [
     { value: "javascript", label: "JavaScript" },
@@ -20,14 +21,14 @@ function Form({ formData, setFormData }) {
     { value: "java", label: "Java" },
     { value: "csharp", label: "C#" },
     { value: "php", label: "PHP" },
-    
+
     { value: "typescript", label: "TypeScript" },
   ];
 
   return (
     <>
       <div className="form__wrapper">
-        <form className="form__container"onSubmit={handleSubmit}>
+        <form className="form__container" onSubmit={handleSubmit}>
           <div className="form__title">
             <h2>Información</h2>
             <p>Cuéntanos mas sobre tu proyecto</p>
@@ -80,8 +81,8 @@ function Form({ formData, setFormData }) {
               onChange={handleInput}
             />
           </div>
-         
-          <Select 
+
+          <Select
             placeholder="Tecnologías"
             options={techOptions}
             isMulti
@@ -99,7 +100,6 @@ function Form({ formData, setFormData }) {
             }
           />
 
-          
           <div className="form__group">
             <textarea
               id="description"
@@ -140,7 +140,7 @@ function Form({ formData, setFormData }) {
             <div className="form__btns">
               {/* Foto de perfil */}
               <GetAvatar
-                avatar={formData.profileAvatar}
+                avatar={formData.profileAvatar || defaultAvatar}
                 updateAvatar={(img) =>
                   setFormData({ ...formData, profileAvatar: img })
                 }
@@ -150,7 +150,7 @@ function Form({ formData, setFormData }) {
             {/* Foto del proyecto */}
             <div className="form__group">
               <GetAvatar
-                avatar={formData.projectAvatar}
+                avatar={formData.projectAvatar || defaultAvatar}
                 updateAvatar={(img) =>
                   setFormData({ ...formData, projectAvatar: img })
                 }
