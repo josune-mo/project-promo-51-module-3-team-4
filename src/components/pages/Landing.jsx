@@ -1,24 +1,37 @@
 import BtnNewProject from "../botons/BtnNewProject";
 import TeamCard from "../TeamCard/TeamCard";
 
+const imageMap = import.meta.glob("../../images/*.{jpg,png,svg}", {
+  eager: true,
+  import: "default",
+});
+
+const getImageByName = (filename) => {
+  const match = Object.entries(imageMap).find(([path]) =>
+    path.endsWith(`/${filename}`)
+  );
+  return match?.[1] || null;
+};
+
 function Landing() {
   const team = [
     {
       name: "Josune",
       role: "Full Stack Developer",
-      projectTitle: "Elegant Workspace",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tellus est, tempus in suscipit vel, ullamcorper sit amet risus.",
+      projectTitle: "FitSync",
+      description:
+        " Front-end lover turned API whisperer. Her React components are smoother than her coffee.",
       technologies: ["React", "HTML", "CSS"],
-      photo: "/Josune.jpg",
+      photo: getImageByName("Josune.jpg"),
       links: [
         {
           name: "GitHub",
-          url: "https://github.com/josune",
+          url: "https://github.com/josune-mo",
           icon: "/GitHub.svg",
         },
         {
           name: "LinkedIn",
-          url: "https://linkedin.com/in/josune",
+          url: "https://www.linkedin.com/in/josunemoralesarrieta",
           icon: "/linkedin.svg",
         },
       ],
@@ -26,10 +39,11 @@ function Landing() {
     {
       name: "Chiara",
       role: "Full Stack Developer",
-      projectTitle: "Elegant Workspace",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tellus est, tempus in suscipit vel, ullamcorper sit amet risus. ",
+      projectTitle: "BugTrackr",
+      description:
+        "Debugs like a detective and writes clean code that could make linters cry with joy. ",
       technologies: ["React", "HTML", "CSS"],
-      photo: "/Chiara.jpg",
+      photo: getImageByName("Chiara.jpg"),
       links: [
         {
           name: "GitHub",
@@ -46,19 +60,20 @@ function Landing() {
     {
       name: "Montse",
       role: "Full Stack Developer",
-      projectTitle: "Elegant Workspace",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tellus est, tempus in suscipit vel, ullamcorper sit amet risus.",
+      projectTitle: "TaskNest",
+      description:
+        "Strategic thinker and team motivator. If Agile were a person, it would be her.",
       technologies: ["React", "HTML", "CSS"],
-      photo: "/assets/fotos/joana.jpg",
+      photo: getImageByName("Montse.jpg"),
       links: [
         {
           name: "GitHub",
-          url: "https://github.com/montse",
+          url: "https://github.com/montsemoran",
           icon: "/GitHub.svg",
         },
         {
           name: "LinkedIn",
-          url: "https://linkedin.com/in/montse",
+          url: "https://www.linkedin.com/in/montse-moran",
           icon: "/linkedin.svg",
         },
       ],
@@ -66,19 +81,20 @@ function Landing() {
     {
       name: "Sandra",
       role: "Full Stack Developer",
-      projectTitle: "Elegant Workspace",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tellus est, tempus in suscipit vel, ullamcorper sit amet risus.",
+      projectTitle: "MoodBoard",
+      description:
+        "UX queen with an eye for detail and a knack for making apps that users actually enjoy",
       technologies: ["React", "HTML", "CSS"],
-      photo: "/Sandra.jpg",
+      photo: getImageByName("Sandra.jpg"),
       links: [
         {
           name: "GitHub",
-          url: "https://github.com/Sandra",
+          url: "https://github.com/SaNdRyXu",
           icon: "/GitHub.svg",
         },
         {
           name: "LinkedIn",
-          url: "https://linkedin.com/in/sandra",
+          url: "https://www.linkedin.com/in/sandra-garcia-39038528b/",
           icon: "/linkedin.svg",
         },
       ],
@@ -86,10 +102,11 @@ function Landing() {
     {
       name: "Joana",
       role: "Full Stack Developer",
-      projectTitle: "Elegant Workspace",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tellus est, tempus in suscipit vel, ullamcorper sit amet risus.",
+      projectTitle: "EcoCart",
+      description:
+        "Back-end powerhouse with a passion for performance. Her favorite language? Whichever gets the job done.",
       technologies: ["React", "HTML", "CSS"],
-      photo: "/Joana.jpg",
+      photo: getImageByName("Joana.jpg"),
       links: [
         {
           name: "GitHub",
