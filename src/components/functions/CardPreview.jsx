@@ -92,7 +92,12 @@ CardPreview.propTypes = {
     authorName: PropTypes.string,
     authorJob: PropTypes.string,
     description: PropTypes.string,
-    technology: PropTypes.arrayOf(PropTypes.string),
+    technology: PropTypes.arrayOf(
+      PropTypes.shape({
+        value: PropTypes.string,
+        label: PropTypes.string,
+      })
+    ),
     projectRepository: PropTypes.string,
     projectDemo: PropTypes.string,
   }).isRequired,

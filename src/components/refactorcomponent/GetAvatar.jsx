@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import PropTypes from 'prop-types';
 import defaultAvatar from '../../images/default-avatar.svg';
 
-function GetAvatar({avatar=defaultAvatar, updateAvatar, text='Get avatar!'}) {
+function GetAvatar({avatar=defaultAvatar, updateAvatar, text='Get avatar!', hidePreview=false}) {
   const fr = new FileReader();
   const myFileField = React.createRef();
   const uploadImage = (ev) => {
@@ -30,11 +30,12 @@ function GetAvatar({avatar=defaultAvatar, updateAvatar, text='Get avatar!'}) {
           onChange={uploadImage}
         />
       </label>
-
-      <div
-        className="get-avatar__preview"
-        style={{ backgroundImage: `url(${avatar})` }}
-      ></div>
+      {!hidePreview && (
+        <div
+          className="get-avatar__preview"
+          style={{ backgroundImage: `url(${avatar})` }}
+        ></div>
+      )}
     </div>
   );
 }
@@ -42,7 +43,8 @@ function GetAvatar({avatar=defaultAvatar, updateAvatar, text='Get avatar!'}) {
 GetAvatar.propTypes = {
   avatar: PropTypes.string,
   updateAvatar: PropTypes.func.isRequired,
-  text: PropTypes.string
+  text: PropTypes.string,
+  hidePreview: PropTypes.bool,
 };
 
 export default GetAvatar;

@@ -1,5 +1,4 @@
 import GetAvatar from "../refactorcomponent/GetAvatar";
-import defaultAvatar from "../../images/default-avatar.svg";
 import PropTypes from "prop-types";
 import Select from "react-select";
 
@@ -140,21 +139,23 @@ function Form({ formData, setFormData }) {
             <div className="form__btns">
               {/* Foto de perfil */}
               <GetAvatar
-                avatar={formData.profileAvatar || defaultAvatar}
+                avatar={formData.profileAvatar}
                 updateAvatar={(img) =>
                   setFormData({ ...formData, profileAvatar: img })
                 }
                 text="Sube tu foto de perfil"
+                hidePreview={true}
               />
             </div>
             {/* Foto del proyecto */}
             <div className="form__group">
               <GetAvatar
-                avatar={formData.projectAvatar || defaultAvatar}
+                avatar={formData.projectAvatar}
                 updateAvatar={(img) =>
                   setFormData({ ...formData, projectAvatar: img })
                 }
                 text="Sube la imagen de tu proyecto"
+                hidePreview={true}
               />
             </div>
             <button className="genericBtn">Subir proyecto</button>

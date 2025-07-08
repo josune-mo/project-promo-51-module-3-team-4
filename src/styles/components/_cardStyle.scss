@@ -148,3 +148,33 @@
   justify-content: center;
   margin-top: 20px;
 }
+
+//CLASES --> refactorcomponent - Para actualizar las fotos que suba la usuaria
+
+.get-avatar__preview {
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  margin-top: 10px;
+  max-width: 120px;
+  max-height: 120px;
+}
+
+.cardStyle__avatar-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.cardStyle__project-img {
+  width: 100%;
+  max-width: 250px;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
