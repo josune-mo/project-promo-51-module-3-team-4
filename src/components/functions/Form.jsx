@@ -152,7 +152,7 @@ function Form({ formData, setFormData }) {
               onChange={handleInput}
             />
 
-            <div className="form__btns">
+            <div className="btnContainer">
               {/* Foto de perfil */}
               <GetAvatar
                 avatar={formData.profileAvatar}
@@ -164,7 +164,7 @@ function Form({ formData, setFormData }) {
               />
             </div>
             {/* Foto del proyecto */}
-            <div className="form__group">
+            <div className="btnContainer">
               <GetAvatar
                 avatar={formData.projectAvatar}
                 updateAvatar={(img) =>
@@ -174,9 +174,11 @@ function Form({ formData, setFormData }) {
                 hidePreview={true}
               />
             </div>
+            <div className="btnContainer">
             <Link to="/cardpreview">
               <button className="genericBtn">Subir proyecto</button>
             </Link>
+            </div>
           </div>
         </form>
       </div>
