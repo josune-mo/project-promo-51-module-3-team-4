@@ -126,7 +126,7 @@ function Landing() {
     <>
       <BtnNewProject />
 
-      <section className="team-section">
+      <section className="team-section landingPage">
         <div className="cards-flex">
           {team.map((member, index) => (
             <TeamCard key={index} {...member} />

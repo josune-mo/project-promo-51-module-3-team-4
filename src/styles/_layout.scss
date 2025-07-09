@@ -62,26 +62,27 @@
 
 
 //FORM PAGE
+
 .formPageStyle {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 
     @media (min-width: 1024px) {
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: 4fr 2fr;
+        padding-right: 30px;
         justify-content: center;
-        gap: 20px;
+        align-items: center;
+        width: fit-content;
     }
 }
 
-.leftContent {
-    @media (min-width: 1024px) {
-        width: 70%;
-    }
-}
-
+.leftContent,
 .rightContent {
-    @media (min-width: 1024px) {
-        width: 30%;
-    }
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

@@ -14,17 +14,26 @@
   }
 }
 
+.landingPage .cardStyle {
+  max-width: 450px;
+}
 
 // CLASSES --> TeamCard-TeamCard.jsx
 .cardStyle {
   display: flex;
+  //flex-direction: column; --> cuando es muy pequeño
   align-items: center;
   background-color: white;
   color: vars.$color-background;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  max-width: 450px;
   transition: transform 0.3s ease;
+  overflow: hidden; // para que no se salga el contenido
+  text-overflow: ellipsis;
+  width: 100%;
+
+
+  
 
   &:hover {
     transform: scale(1.03);
@@ -37,6 +46,7 @@
     text-align: center;
     padding: 1rem;
     flex-shrink: 0;
+    max-width: 200px;
   }
 
   &__profile-pic {
@@ -52,11 +62,15 @@
     color: #777;
     margin-bottom: 5px;
     font-family: vars.$font-primary;
+    overflow: hidden; 
+    text-overflow: ellipsis;
   }
 
   &__name {
     font-size: 20px;
     font-family: vars.$font-primary;
+    overflow: hidden; 
+    text-overflow: ellipsis;
   }
 
   &__content {
@@ -141,14 +155,15 @@
 //CLASES --> functions-CardPreview.jsx
 .cardPreviewLayout {
   display: flex;
+  flex: 1;
   flex-direction: column;
-  min-height: 70vh;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 80vh;          
+
 }
-@media (min-width: 2500px){
-  .cardPreviewLayout {
-   min-height: 80vh; 
-  }
-}
+
 
 .cardPreviewMain {
   flex-grow: 1;
@@ -158,14 +173,10 @@
 }
 
 .styleCardPreview {
-  width: 80%;
-  max-width: 320px;
+  max-width: 80%;
+  min-width: 360px;
 }
-@media (min-width: 768px) {
-  .styleCardPreview {
-   max-width: 500px;
-}
-}
+
 //CLASES --> refactorcomponent - Para actualizar las fotos que suba la usuaria
 
 .get-avatar__preview {

@@ -10,16 +10,19 @@ function FormPage({ formData, setFormData }) {
       <BtnListProjects />
 
       <section className="formPageStyle">
-        <CardPreview
-          formData={formData}
-          setFormData={setFormData}
-          className="leftContent"
-        />
-        <Form
-          formData={formData}
-          setFormData={setFormData}
-          className="rightContent"
-        />
+        <div className="leftContent">
+          <CardPreview 
+            formData={formData}
+            setFormData={setFormData}
+          />
+        </div>
+        <div className="rightContent">
+          <Form 
+            formData={formData}
+            setFormData={setFormData}
+          />
+        </div>
+        
       </section>
     </>
   );
