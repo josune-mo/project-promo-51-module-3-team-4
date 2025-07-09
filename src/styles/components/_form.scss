@@ -104,3 +104,19 @@
     }
 }
 
+.form__success-message {
+  color: vars.$color-accent;
+  background-color: vars.$color-background;
+  border: 1px solid vars.$color-accent;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-top: 15px;
+  font-weight: 500;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+

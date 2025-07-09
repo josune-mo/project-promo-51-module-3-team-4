@@ -11,16 +11,16 @@ import "./styles/App.scss";
 
 function App() {
   const [formData, setFormData] = useState({
-    projectName: "",
-    projectSlogan: "",
-    projectRepository: "",
-    projectDemo: "",
-    technology: [],
-    description: "",
-    authorName: "",
-    authorJob: "",
-    profileAvatar: "",
-    projectAvatar: "",
+    name: "",
+    slogan: "",
+    repo: "",
+    demo: "",
+    technologies: [],
+    desc: "",
+    autor: "",
+    job: "",
+    image: "",
+    photo: "",
   });
 
   return (

@@ -1,5 +1,7 @@
 import BtnNewProject from "../botons/BtnNewProject";
 import TeamCard from "../TeamCard/TeamCard";
+import LinkedIn from "../../images/linkedin.svg";
+import GitHub from "../../images/GitHub.svg";
 
 const imageMap = import.meta.glob("../../images/*.{jpg,png,svg}", {
   eager: true,
@@ -27,12 +29,12 @@ function Landing() {
         {
           name: "GitHub",
           url: "https://github.com/josune-mo",
-          icon: "/GitHub.svg",
+          icon: GitHub,
         },
         {
           name: "LinkedIn",
           url: "https://www.linkedin.com/in/josunemoralesarrieta",
-          icon: "/linkedin.svg",
+          icon: LinkedIn,
         },
       ],
     },
@@ -48,12 +50,12 @@ function Landing() {
         {
           name: "GitHub",
           url: "https://github.com/cusichia",
-          icon: "/GitHub.svg",
+          icon: GitHub,
         },
         {
           name: "LinkedIn",
           url: "https://linkedin.com/in/chiara-cusi-493b5a216",
-          icon: "/linkedin.svg",
+          icon: LinkedIn,
         },
       ],
     },
@@ -69,12 +71,12 @@ function Landing() {
         {
           name: "GitHub",
           url: "https://github.com/montsemoran",
-          icon: "/GitHub.svg",
+          icon: GitHub,
         },
         {
           name: "LinkedIn",
           url: "https://www.linkedin.com/in/montse-moran",
-          icon: "/linkedin.svg",
+          icon: LinkedIn,
         },
       ],
     },
@@ -90,12 +92,12 @@ function Landing() {
         {
           name: "GitHub",
           url: "https://github.com/SaNdRyXu",
-          icon: "/GitHub.svg",
+          icon: GitHub,
         },
         {
           name: "LinkedIn",
           url: "https://www.linkedin.com/in/sandra-garcia-39038528b/",
-          icon: "/linkedin.svg",
+          icon: LinkedIn,
         },
       ],
     },
@@ -111,12 +113,12 @@ function Landing() {
         {
           name: "GitHub",
           url: "https://github.com/Joana2617",
-          icon: "/GitHub.svg",
+          icon: GitHub,
         },
         {
           name: "LinkedIn",
           url: "https://linkedin.com/in/joana-nunes-8915b113a/",
-          icon: "/linkedin.svg",
+          icon: LinkedIn,
         },
       ],
     },

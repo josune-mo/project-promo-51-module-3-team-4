@@ -1,9 +1,12 @@
+import { useState } from "react";
 import GetAvatar from "../refactorcomponent/GetAvatar";
 import PropTypes from "prop-types";
 import Select from "react-select";
 import { Link } from "react-router-dom";
 
 function Form({ formData, setFormData }) {
+  const [showMessage, setShowMessage] = useState(false); // Nuevo estado
+
   const handleInput = (ev) => {
     setFormData({
       ...formData,
@@ -15,21 +18,24 @@ function Form({ formData, setFormData }) {
     e.preventDefault();
 
     const dataAEnviar = {
-    ...formData,
-    technology: formData.technology.map((tech) => tech.value),
-  };
+      ...formData,
+      technologies: formData.technologies.map((tech) => tech.value),
+    };
 
-  fetch('https://dev.adalab.es/api/projectCard', {
-    method: 'POST',
-    body: JSON.stringify(dataAEnviar),
-    headers: { 'Content-Type': 'application/json' },
-  })
-    .then((response) => response.json())
-    .then((dataResponse) => {
-      // Mirar que devuelve esa petición y que podemos hacer con ella
-      console.log(dataResponse);
-    });
-};
+    localStorage.setItem("formData", JSON.stringify(formData));
+
+    fetch("https://dev.adalab.es/api/projectCard", {
+      method: "POST",
+      body: JSON.stringify(dataAEnviar),
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((response) => response.json())
+      .then((dataResponse) => {
+        console.log(dataResponse);
+        setShowMessage(true); // Mostrar mensaje
+        setTimeout(() => setShowMessage(false), 5000); // Ocultar mensaje después de 5s
+      });
+  };
 
   const techOptions = [
     { value: "javascript", label: "JavaScript" },
@@ -46,53 +52,56 @@ function Form({ formData, setFormData }) {
         <form className="form__container" onSubmit={handleSubmit}>
           <div className="form__title">
             <h2>Información</h2>
-            <p>Cuéntanos mas sobre tu proyecto</p>
+            <p>Cuéntanos más sobre tu proyecto</p>
           </div>
           <div className="form__divider"></div>
+
           <div className="form__group">
             <input
               type="text"
               placeholder="Nombre del proyecto"
-              id="projectName"
-              name="projectName"
+              id="name"
+              name="name"
               required
               className="form__input"
-              value={formData.projectName}
+              value={formData.name}
               onChange={handleInput}
             />
           </div>
+
           <div className="form__group">
             <input
               type="text"
               placeholder="Slogan"
-              id="projectSlogan"
-              name="projectSlogan"
+              id="slogan"
+              name="slogan"
               required
               className="form__input"
-              value={formData.projectSlogan}
+              value={formData.slogan}
               onChange={handleInput}
             />
           </div>
+
           <div className="form__group2">
             <input
               type="text"
-              placeholder="Repo ejemplo: https: //github.com/tuusuario/tu-repo"
-              id="projectRepository"
-              name="projectRepository"
+              placeholder="Repo ejemplo: https://github.com/tuusuario/tu-repo"
+              id="repo"
+              name="repo"
               required
               className="form__input"
-              value={formData.projectRepository}
+              value={formData.repo}
               onChange={handleInput}
             />
 
             <input
               type="text"
               placeholder="Demo"
-              id="projectDemo"
-              name="projectDemo"
+              id="demo"
+              name="demo"
               required
               className="form__input"
-              value={formData.projectDemo}
+              value={formData.demo}
               onChange={handleInput}
             />
           </div>
@@ -103,26 +112,26 @@ function Form({ formData, setFormData }) {
             isMulti
             closeMenuOnSelect={false}
             isSearchable={false}
-            name="technology"
+            name="technologies"
             className="form__select"
             classNamePrefix="select"
-            value={formData.technology}
+            value={formData.technologies}
             onChange={(selectedOptions) =>
               setFormData({
                 ...formData,
-                technology: selectedOptions,
+                technologies: selectedOptions,
               })
             }
           />
 
           <div className="form__group">
             <textarea
-              id="description"
-              name="description"
+              id="desc"
+              name="desc"
               placeholder="Descripción"
               required
               className="form__textarea"
-              value={formData.description}
+              value={formData.desc}
               onChange={handleInput}
               rows="5"
             ></textarea>
@@ -134,75 +143,85 @@ function Form({ formData, setFormData }) {
             <input
               type="text"
               placeholder="Nombre"
-              id="authorName"
-              name="authorName"
+              id="autor"
+              name="autor"
               required
               className="form__input"
-              value={formData.authorName}
+              value={formData.autor}
               onChange={handleInput}
             />
             <input
               type="text"
               placeholder="Trabajo"
-              id="authorJob"
-              name="authorJob"
+              id="job"
+              name="job"
               required
               className="form__input"
-              value={formData.authorJob}
+              value={formData.job}
               onChange={handleInput}
             />
 
             <div className="btnContainer">
-              {/* Foto de perfil */}
               <GetAvatar
-                avatar={formData.profileAvatar}
+                avatar={formData.image}
                 updateAvatar={(img) =>
-                  setFormData({ ...formData, profileAvatar: img })
+                  setFormData({ ...formData, image: img })
                 }
                 text="Sube tu foto de perfil"
                 hidePreview={true}
               />
             </div>
-            {/* Foto del proyecto */}
+
             <div className="btnContainer">
               <GetAvatar
-                avatar={formData.projectAvatar}
+                avatar={formData.photo}
                 updateAvatar={(img) =>
-                  setFormData({ ...formData, projectAvatar: img })
+                  setFormData({ ...formData, photo: img })
                 }
                 text="Sube la imagen de tu proyecto"
                 hidePreview={true}
               />
             </div>
+
             <div className="btnContainer">
-            <Link to="/cardpreview">
-              <button className="genericBtn">Subir proyecto</button>
-            </Link>
+              <button type="submit" className="genericBtn">
+                Subir proyecto
+              </button>
+              <Link to="/cardpreview">
+                <button className="genericBtn">Ver proyecto</button>
+              </Link>
             </div>
+
+            {/* ✅ Mensaje de éxito */}
+            {showMessage && (
+              <p className="form__success-message">
+                ¡Proyecto subido con éxito!
+              </p>
+            )}
           </div>
         </form>
       </div>
     </>
   );
-};
+}
 
 Form.propTypes = {
   formData: PropTypes.shape({
-    projectName: PropTypes.string,
-    projectSlogan: PropTypes.string,
-    projectRepository: PropTypes.string,
-    projectDemo: PropTypes.string,
-    technology: PropTypes.arrayOf(
+    name: PropTypes.string,
+    slogan: PropTypes.string,
+    repo: PropTypes.string,
+    demo: PropTypes.string,
+    technologies: PropTypes.arrayOf(
       PropTypes.shape({
         value: PropTypes.string,
         label: PropTypes.string,
       })
     ),
-    description: PropTypes.string,
-    authorName: PropTypes.string,
-    authorJob: PropTypes.string,
-    profileAvatar: PropTypes.string,
-    projectAvatar: PropTypes.string,
+    desc: PropTypes.string,
+    autor: PropTypes.string,
+    job: PropTypes.string,
+    image: PropTypes.string,
+    photo: PropTypes.string,
   }).isRequired,
   setFormData: PropTypes.func.isRequired,
 };
